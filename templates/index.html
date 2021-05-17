@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cab-helper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo center">cab helper</a>
+            <div class="nav-content">
+                <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" href="/login">
+                    <i class="material-icons">supervisor_account</i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+    <div class="container">
+
+        {% if allcabs.count() != 0 %}
+        {% for cab in allcabs %}
+        <div class="row items">
+            {{cab.s_loc}} <span class="material-icons">{{cab.vehicle}}</span> {{cab.d_loc}}
+
+            <div class="right">
+                <button class="btn" onclick="myFunction('{{cab._id}}')">details</button>
+            </div>
+
+            <div class="details row" id='{{cab._id}}' style="display: none;">
+                <div class="col s7 gmap">
+                    {{ cab.i_frame | safe}}
+                </div>
+                <div class="col s5 info">
+                    <div class="row">Name : {{cab.name}}</div>
+                    <div class="row">Telephone : {{cab.p_no}}</div>
+                    <div class="row">Cost : {{cab.money}}</div>
+                    <div class="row">Time & data : {{cab.t_d}}</div>
+                    <div class="row">Pickup address : {{cab.pk_add}}</div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <h3 class="grey-text center"><i class="material-icons">mood_bad</i>cabs not found in your area</h3>
+
+
+        {% endif %}
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+</body>
+
+<style>
+    .items {
+        border-radius: 25px;
+        border: 2px solid #EE6E73;
+        padding: 20px;
+        font-size: 20px;
+        background-image: url('/static/img/city.jpg');
+        background-repeat:no-repeat;
+        background-size:100%;
+        background-position:center;
+
+    }
+
+    .details {
+        margin-top: 2em;
+    }
+
+    .material-icons {
+        line-height: 1;
+        font-size: 1em;
+        padding: 0 10px;
+        vertical-align: text-bottom;
+    }
+
+    .info {
+        margin-top: 1em;
+    }
+    body{
+        background-image: url('/static/img/img.jpg');
+        background-repeat:no-repeat;
+        background-size:contain;
+        background-position:center;
+        height: 100vh;
+    }
+</style>
+
+<script>
+    function myFunction(myid) {
+        var x = document.getElementById(myid);
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+
+</html>

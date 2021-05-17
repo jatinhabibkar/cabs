@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cab-helper</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo center">cab helper</a>
+            <div class="nav-content">
+                <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" href="/add">
+                    <i class="material-icons">add</i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+    <div class="container">
+
+        <form method="POST" enctype="multipart/form-data">
+            <div class="col">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input name="s_loc" type="text" id="source" class="validate">
+                        <label for="source">source location</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input name="d_loc" type="text" id="destination" class="validate">
+                        <label for="destination">destination location</label>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input name="name" id="icon_prefix" type="text" class="validate">
+                        <label for="icon_prefix">Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">phone</i>
+                        <input name="p_no" id="icon_telephone" type="tel" class="validate">
+                        <label for="icon_telephone">Telephone</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <select name="vehicle">
+                            <option value="" disabled selected>Choose your vehicle</option>
+                            <option value="directions_bike">2 wheeler</option>
+                            <option value="time_to_leave">4 wheeler</option>
+                        </select>
+                        <label>Materialize Select</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">attach_money</i>
+                        <input name="money" id="icon_attach_money" type="number" class="validate">
+                        <label for="icon_attach_money">cost</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s6">
+                        <div class="input-field">
+                            <input name="t_d" type="text" id="timedate" class="validate">
+                            <label for="timedate">time and date</label>
+                        </div>
+                    </div>
+                    <div class="col s6">
+                        <div class="input-field">
+                            <input name="pk_add" type="text" id="pkaddress" class="validate">
+                            <label for="pkaddress">pickup address</label>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row input-group">
+                    <div class="input-field col s10">
+                        <textarea name="i_frame" id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Textarea</label>
+                    </div>
+                    <div class="btn waves-effect waves-light" onclick="display()">display</div>
+                </div>
+                <div class="row center" id="map">
+                </div>
+            </div>
+
+            <button class="btn waves-effect right waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+
+        </form>
+
+        <br>
+
+
+    </div>
+
+
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function (e) {
+        e.preventDefault()
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+        console.log(instances)
+    });
+
+
+
+    display = () => {
+        var iframehai = document.getElementById("textarea1").value
+        document.getElementById("map").innerHTML = iframehai
+    }
+</script>
+
+<style>
+    body {
+        background-image: url('/static/img/img.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 100vh;
+    }
+</style>
+
+</html>
