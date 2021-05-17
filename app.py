@@ -1,4 +1,3 @@
-from dns.resolver import query
 from flask import Flask
 from flask import render_template,redirect,url_for,request
 from flask import jsonify
