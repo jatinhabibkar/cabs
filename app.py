@@ -17,11 +17,6 @@ collection =db.get_collection("items")
 #database
 
 
-@app.route('/la',methods=['GET'])
-def land():
-    return render_template("landingpage.html")
-
-
 @app.route('/',methods=['GET'])
 def cabs():
     cabs_d=collection.find()
