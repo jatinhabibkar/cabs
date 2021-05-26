@@ -113,8 +113,8 @@
     }
 
     function deleteit(id) {
-
-        fetch('http://localhost:5000/del/' + id, { // assuming the backend is hosted on the same server
+        const urlhai=window.location.host
+        fetch('/del/'+ id, { // assuming the backend is hosted on the same server
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json;charset=UTF-8"

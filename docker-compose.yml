@@ -1,0 +1,13 @@
+datastore:
+    image: mongo
+    ports: 
+        - "27017:27017"
+frontend:
+    build: .
+    command: python3 -u app.py
+    ports:
+        - "5000:5000"
+    volumes: 
+        - .:/project
+    links: 
+        - datastore
