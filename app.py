@@ -9,7 +9,7 @@ app=Flask(__name__)
 # database
 from pymongo import MongoClient
 
-client = MongoClient("mongodb://datastore:27017/testInv")
+client = MongoClient("mongodb+srv://jatin:cabs@cluster0.mrxxj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 
 db=client.get_database("cabs")
 
@@ -64,4 +64,4 @@ def delit(id):
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=5000)
+    app.run(host="localhost",port=5000)
