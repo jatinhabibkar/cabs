@@ -1,0 +1,54 @@
+.items {
+    border-radius: 25px;
+    border: 2px solid #EE6E73;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    font-size: 20px;
+    background-image: url('/static/img/city.jpg');
+    background-repeat: repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+.details {
+    margin-top: 2em;
+}
+
+.material-icons {
+    line-height: 1;
+    font-size: 1em;
+    padding: 0 10px;
+    vertical-align: text-bottom;
+}
+
+.info {
+    margin-top: 1em;
+}
+
+body {
+    background-image: url('/static/img/img.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100vh;
+    font-size: large;
+    
+}
+
+
+.blurit {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px solid #EE6E73;
+
+  }
+  
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .blurit {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+  }
+

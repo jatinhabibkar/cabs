@@ -9,7 +9,7 @@ app=Flask(__name__)
 # database
 from pymongo import MongoClient
 
-client = MongoClient("mongodb+srv://jatin:cabs@cluster0.mrxxj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+client = MongoClient("")
 
 db=client.get_database("cabs")
 
@@ -35,7 +35,6 @@ def add():
             "money":fn['money'],
             't_d':fn['t_d'],
             'pk_add':fn['pk_add'],
-            "i_frame":fn['i_frame'],
         }
         
         response=collection.insert_one(data)
@@ -64,4 +63,4 @@ def delit(id):
 
 
 if __name__ == '__main__':
-    app.run(host="localhost",port=5000)
+    app.run(host="localhost",port=5000,debug=True)
