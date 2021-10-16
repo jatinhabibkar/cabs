@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
     e.preventDefault()
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems);
-    console.log(instances)
 });
 
 
