@@ -60,6 +60,9 @@ def delit(id):
     print(x)
     return jsonify(posts={"data":"ok"})
 
+@app.route('/service-worker.js')
+def sw():
+    return app.send_static_file('service-worker.js')
 
 
 if __name__ == '__main__':

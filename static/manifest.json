@@ -1,5 +1,5 @@
-{ "name":"Air Near Me",
-    "short_name": "AirNearMe",
+{ "name":"Uno cabs",
+    "short_name": "unocabs",
     "start_url": "/",
     "scope":"/",
     "display": "standalone",
