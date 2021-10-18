@@ -1,8 +1,9 @@
-const cacheName = 'flask-PWA-v3';
+const cacheName = 'flask-PWA-v4';
 const filesToCache = [
-    '/',
     '/static/app.js',
     '/static/css/main.css',
+    '/static/img/city.jpg',
+    '/static/img/img.jpg',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
     'https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
 ];
