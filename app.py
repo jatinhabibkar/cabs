@@ -9,7 +9,7 @@ app=Flask(__name__)
 # database
 from pymongo import MongoClient
 
-client = MongoClient("mongodb+srv://jatin:cabs@cluster0.mrxxj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+client = MongoClient("")
 
 db=client.get_database("cabs")
 
